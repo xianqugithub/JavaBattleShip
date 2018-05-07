@@ -1,0 +1,14 @@
+edu.neu.ccs.cs5004.assignment5.battleship
+edu.neu.ccs.cs5004.assignment5.battleship.controller.control
+edu.neu.ccs.cs5004.assignment5.battleship.controller.shipplacer
+edu.neu.ccs.cs5004.assignment5.battleship.controller.strategy
+edu.neu.ccs.cs5004.assignment5.battleship.model.attackresult
+edu.neu.ccs.cs5004.assignment5.battleship.model.cell
+edu.neu.ccs.cs5004.assignment5.battleship.model.enumparameters
+edu.neu.ccs.cs5004.assignment5.battleship.model.game
+edu.neu.ccs.cs5004.assignment5.battleship.model.map
+edu.neu.ccs.cs5004.assignment5.battleship.model.player
+edu.neu.ccs.cs5004.assignment5.battleship.model.ship
+edu.neu.ccs.cs5004.assignment5.battleship.view.consoleprinter
+edu.neu.ccs.cs5004.assignment5.battleship.view.observable
+edu.neu.ccs.cs5004.assignment5.battleship.view.observer

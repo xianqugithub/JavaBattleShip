@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>AbstractGame.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assignment for class CS5004</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004.assignment5.battleship.model.game</a> &gt; <span class="el_source">AbstractGame.java</span></div><h1>AbstractGame.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004.assignment5.battleship.model.game;
+
+import edu.neu.ccs.cs5004.assignment5.battleship.controller.shipplacer.ShipPlacer;
+import edu.neu.ccs.cs5004.assignment5.battleship.model.player.Player;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+
+/**
+ * Represent a abstract game.
+ */
+<span class="fc" id="L14">abstract class AbstractGame implements Game {</span>
+  Player player1;
+  Player player2;
+
+  @Override
+  public Player getPlayer1() {
+<span class="fc" id="L20">    return player1;</span>
+  }
+
+  @Override
+  public Player getPlayer2() {
+<span class="fc" id="L25">    return player2;</span>
+  }
+
+  @Override
+  public void initialize() {
+
+    ShipPlacer humanShipPlacer;
+    final ShipPlacer computerShipPlacer;
+    String input;
+<span class="fc" id="L34">    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in,</span>
+            StandardCharsets.UTF_8));
+<span class="fc" id="L36">    System.out.println(&quot;Press M For Manual Setup of Ships.&quot;);</span>
+<span class="fc" id="L37">    System.out.println(&quot;Press R For Random Setup of Ships.&quot;);</span>
+
+    try {
+<span class="fc" id="L40">      input = bufferedReader.readLine();</span>
+
+<span class="pc bpc" id="L42" title="3 of 6 branches missed.">      while ((input != null) &amp;&amp; (!input.equals(&quot;M&quot;) &amp;&amp; !input.equals(&quot;R&quot;))) {</span>
+<span class="nc" id="L43">        System.out.println(&quot;Wrong Input.&quot;);</span>
+<span class="nc" id="L44">        System.out.println(&quot;Press M For Manual Setup of Ships.&quot;);</span>
+<span class="nc" id="L45">        System.out.println(&quot;Press R For Random Setup of Ships.&quot;);</span>
+<span class="nc" id="L46">        input = bufferedReader.readLine();</span>
+      }
+<span class="pc bpc" id="L48" title="1 of 2 branches missed.">      if (input == null) {</span>
+<span class="nc" id="L49">        input = &quot;&quot;;</span>
+      }
+<span class="pc bpc" id="L51" title="7 of 10 branches missed.">      switch (input) {</span>
+        case &quot;M&quot;:
+<span class="nc" id="L53">          humanShipPlacer = ShipPlacer.createManualShipPlacer();</span>
+<span class="nc" id="L54">          humanShipPlacer.placeShips(player1);</span>
+<span class="nc" id="L55">          break;</span>
+        case &quot;R&quot;:
+<span class="fc" id="L57">          humanShipPlacer = ShipPlacer.createRandomShipPlacer();</span>
+<span class="fc" id="L58">          humanShipPlacer.placeShips(player1);</span>
+<span class="fc" id="L59">          break;</span>
+        default:
+      }
+<span class="nc" id="L62">    } catch (IOException e) {</span>
+<span class="nc" id="L63">      System.out.println(&quot;The input is not valid.&quot;);</span>
+<span class="fc" id="L64">    }</span>
+
+<span class="fc" id="L66">    computerShipPlacer = ShipPlacer.createRandomShipPlacer();</span>
+
+<span class="fc" id="L68">    computerShipPlacer.placeShips(player2);</span>
+<span class="fc" id="L69">  }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

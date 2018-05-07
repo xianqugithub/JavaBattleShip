@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.11.2">
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/controller/shipplacer/RandomShipPlacer.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/controller/shipplacer/ShipPlacer.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/controller/shipplacer/ManualShipPlacer.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/controller/shipplacer/AbstractShipPlacer.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/controller/control/Control.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/controller/control/GameControl.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/controller/strategy/RandomStrategy.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/controller/strategy/Strategy.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/controller/strategy/UserStrategy.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/controller/strategy/AbstractStrategy.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/enumparameters/ShipConfiguration.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/enumparameters/Row.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/enumparameters/Col.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/attackresult/Sunk.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/attackresult/Miss.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/attackresult/AttackResult.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/attackresult/Hit.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/game/DebugMode.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/game/AbstractGame.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/game/Game.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/game/GameMode.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/cell/EnemyShipCell.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/cell/SpecificShipCell.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/cell/AbstractWaterCell.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/cell/OpenSeaWaterCell.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/cell/GapWaterCell.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/cell/AbstractCell.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/cell/Cell.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/cell/AbstractShipCell.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/map/PlayerMap.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/map/Map.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/ship/Submarine.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/ship/Cruiser.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/ship/Ship.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/ship/AbstractShip.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/ship/Destroyer.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/ship/Battleship.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/player/ComputerPlayer.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/player/Player.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/player/HumanPlayer.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/model/player/AbstractPlayer.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/view/observer/Observer.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/view/observer/ConsoleObserver.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/view/consoleprinter/ConsolePrinter.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/view/consoleprinter/Printer.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/view/observable/Observable.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/view/observable/AbstractObservable.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/view/observable/MapUpdate.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/view/observable/GameUpdate.java">
+</file>
+<file name="/Users/xianqu/GitHub/CS5004/assignment5-part2-zhangjingyua-quxian/src/main/java/edu/neu/ccs/cs5004/assignment5/battleship/Battleship.java">
+</file>
+</checkstyle>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>UserStrategy.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assignment for class CS5004</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004.assignment5.battleship.controller.strategy</a> &gt; <span class="el_source">UserStrategy.java</span></div><h1>UserStrategy.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004.assignment5.battleship.controller.strategy;
+
+import edu.neu.ccs.cs5004.assignment5.battleship.model.enumparameters.Col;
+import edu.neu.ccs.cs5004.assignment5.battleship.model.enumparameters.Row;
+import edu.neu.ccs.cs5004.assignment5.battleship.model.map.Map;
+import edu.neu.ccs.cs5004.assignment5.battleship.model.player.Player;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+
+
+/**
+ * Represent the user's strategy.
+ */
+class UserStrategy extends AbstractStrategy {
+
+  private BufferedReader bufferedReader;
+  private String row;
+  private String col;
+
+<span class="nc" id="L23">  UserStrategy() {</span>
+<span class="nc" id="L24">    bufferedReader = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8));</span>
+<span class="nc" id="L25">  }</span>
+
+  @Override
+  public void attackEnemy(Player self, Player enemy) {
+
+<span class="nc" id="L30">    Map guessMap = self.getGuessMap();</span>
+
+    try {
+
+      while (true) {
+
+        do {
+<span class="nc" id="L37">          System.out.println(&quot;Please enter the row number.&quot;);</span>
+<span class="nc" id="L38">          row = bufferedReader.readLine();</span>
+        }
+<span class="nc bnc" id="L40" title="All 2 branches missed.">        while (row == null</span>
+<span class="nc bnc" id="L41" title="All 2 branches missed.">                || (row.length() &gt; 2</span>
+<span class="nc bnc" id="L42" title="All 6 branches missed.">                || (row.length() == 1 &amp;&amp; (row.compareTo(&quot;1&quot;) &lt; 0 || row.compareTo(&quot;9&quot;) &gt; 0))</span>
+<span class="nc bnc" id="L43" title="All 4 branches missed.">                || (row.length() == 2 &amp;&amp; !row.equals(&quot;10&quot;))));</span>
+
+        do {
+<span class="nc" id="L46">          System.out.println(&quot;Please enter the column number.&quot;);</span>
+<span class="nc" id="L47">          col = bufferedReader.readLine();</span>
+        }
+<span class="nc bnc" id="L49" title="All 8 branches missed.">        while (col == null || col.length() &gt; 1 || col.compareTo(&quot;A&quot;) &lt; 0 || col.compareTo(&quot;J&quot;)</span>
+                &gt; 0);
+
+<span class="nc bnc" id="L52" title="All 2 branches missed.">        if (isValidPosition(guessMap, Row.values()[Integer.parseInt(row) - 1], Col.valueOf(col))) {</span>
+<span class="nc" id="L53">          break;</span>
+        } else {
+<span class="nc" id="L55">          System.out.println(&quot;Invalid Input. Please try again.&quot;);</span>
+        }
+
+      }
+
+<span class="nc" id="L60">    } catch (IOException e) {</span>
+
+<span class="nc" id="L62">      System.out.println(&quot;&quot;);</span>
+<span class="nc" id="L63">    }</span>
+
+<span class="nc" id="L65">    self.attackEnemy(enemy, Row.values()[Integer.parseInt(row) - 1], Col.valueOf(col));</span>
+<span class="nc" id="L66">  }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

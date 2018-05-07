@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ManualShipPlacer.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assignment for class CS5004</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004.assignment5.battleship.controller.shipplacer</a> &gt; <span class="el_source">ManualShipPlacer.java</span></div><h1>ManualShipPlacer.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004.assignment5.battleship.controller.shipplacer;
+
+import edu.neu.ccs.cs5004.assignment5.battleship.model.enumparameters.Col;
+import edu.neu.ccs.cs5004.assignment5.battleship.model.enumparameters.Row;
+import edu.neu.ccs.cs5004.assignment5.battleship.model.enumparameters.ShipConfiguration;
+import edu.neu.ccs.cs5004.assignment5.battleship.model.map.Map;
+import edu.neu.ccs.cs5004.assignment5.battleship.model.player.Player;
+import edu.neu.ccs.cs5004.assignment5.battleship.model.ship.Ship;
+import edu.neu.ccs.cs5004.assignment5.battleship.view.observable.Observable;
+import edu.neu.ccs.cs5004.assignment5.battleship.view.observer.Observer;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+
+
+class ManualShipPlacer extends AbstractShipPlacer {
+
+  private BufferedReader bufferedReader;
+  private Observer consoleObserver;
+
+
+<span class="nc" id="L24">  ManualShipPlacer() {</span>
+<span class="nc" id="L25">    bufferedReader = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8));</span>
+<span class="nc" id="L26">    consoleObserver = Observer.createConsoleObserver();</span>
+<span class="nc" id="L27">  }</span>
+
+  @Override
+  public void placeShips(Player player) {
+<span class="nc" id="L31">    Map fleetMap = player.getFleetMap();</span>
+<span class="nc" id="L32">    Ship[] ships = player.getShips();</span>
+
+    Observable mapUpdate;
+<span class="nc" id="L35">    mapUpdate = Observable.createMapUpdate(fleetMap);</span>
+<span class="nc" id="L36">    mapUpdate.subscribeViewers(consoleObserver);</span>
+
+    String row;
+    String col;
+    String configuration;
+
+<span class="nc" id="L42">    int leftNumOfShips = ships.length;</span>
+<span class="nc" id="L43">    int index = 0;</span>
+
+<span class="nc bnc" id="L45" title="All 2 branches missed.">    while (leftNumOfShips &gt; 0) {</span>
+
+      try {
+
+        while (true) {
+
+<span class="nc" id="L51">          System.out.println(&quot;You Are Placing a &quot; + ships[index]);</span>
+
+          do {
+<span class="nc" id="L54">            System.out.println(&quot;Please Enter the Row Number.&quot;);</span>
+<span class="nc" id="L55">            row = bufferedReader.readLine();</span>
+<span class="nc bnc" id="L56" title="All 2 branches missed.">          } while (row == null</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">                  || row.length() &gt; 2</span>
+<span class="nc bnc" id="L58" title="All 6 branches missed.">                  || (row.length() == 1 &amp;&amp; (row.compareTo(&quot;1&quot;) &lt; 0 || row.compareTo(&quot;9&quot;) &gt; 0))</span>
+<span class="nc bnc" id="L59" title="All 4 branches missed.">                  || (row.length() == 2 &amp;&amp; !row.equals(&quot;10&quot;)));</span>
+
+          do {
+<span class="nc" id="L62">            System.out.println(&quot;Please Enter the Column Number.&quot;);</span>
+<span class="nc" id="L63">            col = bufferedReader.readLine();</span>
+          }
+<span class="nc bnc" id="L65" title="All 8 branches missed.">          while (col == null || col.length() &gt; 1 || col.compareTo(&quot;A&quot;) &lt; 0 || col.compareTo(&quot;J&quot;)</span>
+                  &gt; 0);
+
+          do {
+<span class="nc" id="L69">            System.out.println(&quot;Please enter the Configuration.&quot;);</span>
+<span class="nc" id="L70">            configuration = bufferedReader.readLine();</span>
+          }
+<span class="nc bnc" id="L72" title="All 6 branches missed.">          while ((configuration != null) &amp;&amp; (!configuration.equals(&quot;H&quot;) &amp;&amp; !configuration.equals(</span>
+                  &quot;V&quot;)));
+
+<span class="nc bnc" id="L75" title="All 2 branches missed.">          if (isValidLocation(Row.values()[Integer.parseInt(row) - 1], Col.valueOf(col),</span>
+<span class="nc" id="L76">                  ShipConfiguration.valueOf(configuration), ships[index].getSize(), fleetMap)) {</span>
+<span class="nc" id="L77">            placeSingleShip(Row.values()[Integer.parseInt(row) - 1], Col.valueOf(col),</span>
+<span class="nc" id="L78">                    ShipConfiguration.valueOf(configuration), ships[index++], fleetMap);</span>
+
+<span class="nc" id="L80">            mapUpdate.updateMap(fleetMap);</span>
+<span class="nc" id="L81">            leftNumOfShips--;</span>
+<span class="nc" id="L82">            break;</span>
+
+          } else {
+<span class="nc" id="L85">            System.out.println(&quot;Invalid Input. Please try again.&quot;);</span>
+          }
+
+        }
+
+<span class="nc" id="L90">      } catch (IOException e) {</span>
+
+<span class="nc" id="L92">        System.out.println(&quot;&quot;);</span>
+<span class="nc" id="L93">      }</span>
+
+    }
+
+
+<span class="nc" id="L98">  }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

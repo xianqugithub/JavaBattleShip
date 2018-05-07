@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Player.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assignment for class CS5004</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004.assignment5.battleship.model.player</a> &gt; <span class="el_source">Player.java</span></div><h1>Player.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004.assignment5.battleship.model.player;
+
+import edu.neu.ccs.cs5004.assignment5.battleship.model.attackresult.AttackResult;
+import edu.neu.ccs.cs5004.assignment5.battleship.model.enumparameters.Col;
+import edu.neu.ccs.cs5004.assignment5.battleship.model.enumparameters.Row;
+import edu.neu.ccs.cs5004.assignment5.battleship.model.map.Map;
+import edu.neu.ccs.cs5004.assignment5.battleship.model.ship.Ship;
+
+
+
+public interface Player {
+
+  /**
+   * Creator of new human player.
+   *
+   * @param ships that are given to the human player.
+   * @return a new human player.
+   */
+  static Player createHumanPlayer(Ship[] ships) {
+<span class="fc" id="L20">    return new HumanPlayer(ships);</span>
+  }
+
+  /**
+   * Creator of new computer player.
+   *
+   * @param ships that are given to the computer player.
+   * @return a new computer player.
+   */
+  static Player createComputerPlayer(Ship[] ships) {
+<span class="fc" id="L30">    return new ComputerPlayer(ships);</span>
+  }
+
+  /**
+   * Attack of enemy at specific position.
+   *
+   * @param enemy the player to be attacked.
+   * @param row the attacked row number [1-10].
+   * @param col the attacked col number [A-J].
+   */
+  void attackEnemy(Player enemy, Row row, Col col);
+
+  /**
+   * Attacked at specific position.
+   *
+   * @param row the attacked row number [1-10].
+   * @param col the attacked col number [A-J].
+   */
+  void attacked(Row row, Col col);
+
+  /**
+   * Attack Result after attacked at specific position.
+   *
+   * @param row the attacked row number [1-10].
+   * @param col the attacked col number [A-J].
+   * @return the attacked response.
+   */
+  AttackResult attackResponse(Row row, Col col);
+
+  /**
+   * If this player is lost.
+   *
+   * @return a boolean variable that indicates if the current player is lost.
+   */
+  Boolean isLost();
+
+  /**
+   * Getter of current player's fleet map.
+   *
+   * @return the player's fleet map.
+   */
+  Map getFleetMap();
+
+  /**
+   * Getter of current player's guess map.
+   *
+   * @return the player's guess map.
+   */
+  Map getGuessMap();
+
+  /**
+   * Getter of current player's ships.
+   *
+   * @return the ships that are originally assigned to the player.
+   */
+  Ship[] getShips();
+
+  /**
+   * Getter of current player's number of ships.
+   *
+   * @return the number of ships.
+   */
+  int getNumOfShips();
+
+  /**
+   * Getter if current player can attack.
+   *
+   * @return if the current player can attack its opponent.
+   */
+  boolean canAttack();
+
+  /**
+   * Mutator of current player's attack status.
+   */
+  void resetAttack();
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

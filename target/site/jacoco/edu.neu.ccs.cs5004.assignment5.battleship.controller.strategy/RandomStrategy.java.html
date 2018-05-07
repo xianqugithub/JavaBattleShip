@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>RandomStrategy.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assignment for class CS5004</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004.assignment5.battleship.controller.strategy</a> &gt; <span class="el_source">RandomStrategy.java</span></div><h1>RandomStrategy.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004.assignment5.battleship.controller.strategy;
+
+import edu.neu.ccs.cs5004.assignment5.battleship.model.enumparameters.Col;
+import edu.neu.ccs.cs5004.assignment5.battleship.model.enumparameters.Row;
+import edu.neu.ccs.cs5004.assignment5.battleship.model.map.Map;
+import edu.neu.ccs.cs5004.assignment5.battleship.model.player.Player;
+
+import java.util.Random;
+
+/**
+ * Represents the random strategy.
+ */
+public class RandomStrategy extends AbstractStrategy {
+
+  private Row row;
+  private Col col;
+  private Random rand;
+
+<span class="fc" id="L19">  RandomStrategy() {</span>
+<span class="fc" id="L20">    rand = new Random();</span>
+<span class="fc" id="L21">    row = Row.values()[rand.nextInt(10)];</span>
+<span class="fc" id="L22">    col = Col.values()[rand.nextInt(10)];</span>
+<span class="fc" id="L23">  }</span>
+
+  @Override
+  public void attackEnemy(Player self, Player enemy) {
+
+<span class="fc" id="L28">    Map guessMap = self.getGuessMap();</span>
+
+<span class="pc bpc" id="L30" title="1 of 2 branches missed.">    while (!isValidPosition(guessMap, row, col)) {</span>
+<span class="nc" id="L31">      row = Row.values()[rand.nextInt(10)];</span>
+<span class="nc" id="L32">      col = Col.values()[rand.nextInt(10)];</span>
+    }
+<span class="fc" id="L34">    self.attackEnemy(enemy, row, col);</span>
+<span class="fc" id="L35">  }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
